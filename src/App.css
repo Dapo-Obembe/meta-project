@@ -1,7 +1,15 @@
 /* VARIABLES */
 
 :root{
-  --primary-clr: ;
+  --primary-clr: #495e57;
+  --primary-clr-yellow: #f4ce14;
+  --secondary-clr-1: #ee9972; 
+  --secondary-clr-2: #fbdabb;
+  --secondary-clr-3: #edefee;
+  --secondary-clr-4: #333;
+
+  /* Typeface */
+  --display-title: 'Markazi Text', san-serif;
 }
 
 
