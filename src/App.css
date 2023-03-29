@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&display=swap');
+
 /* VARIABLES */
 
 :root{
@@ -9,7 +12,8 @@
   --secondary-clr-4: #333;
 
   /* Typeface */
-  --display-title: 'Markazi Text', san-serif;
+  --display-title: 'Markazi Text', serif; /* 64px - Hero title and subtitle */
+  --descriptive-texts: 'Karla', sans-serif; /* CTA, section title, descriptive and others */
 }
 
 
