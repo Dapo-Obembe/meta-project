@@ -18,6 +18,18 @@ header{
     margin: 0 auto;
 }
 
+@media (width <= 768px){
+
+    .header__container{
+    width: 100%;
+    padding: 0 0.5rem;
+    }
+    .header__nav{
+        display: none;
+    }
+}
+
+
 .header__nav--lists{
     display: flex;
         flex-direction: row;

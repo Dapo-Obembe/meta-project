@@ -67,17 +67,18 @@
     color: var(--secondary-clr-3);
 }
 
-@media (width <=768px) {
-    .hero__col2 {
+@media (width <= 768px) {
+.hero__col2 {
         display: flex;
-        justify-content: center;
+        justify-content: center!important;
+        width: 100%;
     }
         .hero__col2 img {
-            display: flex;
-            justify-self: center;
-            align-self: center;
             border-radius: 1rem;
-            margin-bottom: -6rem;
+            margin-bottom: 6rem;
+            width: 100%!important;
+            height: auto;
+            object-fit: cover;
         }
 }
 
@@ -87,9 +88,6 @@
 }
 
 .hero__col2 img {
-    display: flex;
-    justify-self: flex-end;
-    align-self: flex-end;
     border-radius: 1rem;
     margin-bottom: -6rem;
 }
