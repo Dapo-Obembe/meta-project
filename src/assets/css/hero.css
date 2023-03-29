@@ -72,6 +72,13 @@
         display: flex;
         justify-content: center;
     }
+        .hero__col2 img {
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            border-radius: 1rem;
+            margin-bottom: -6rem;
+        }
 }
 
 .hero__col2 {

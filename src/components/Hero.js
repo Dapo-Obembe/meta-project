@@ -14,7 +14,7 @@ function Hero() {
                       <button className='hero__button'>Reserve a Table</button>
                   </div>
                   <div className='hero__col2'>
-                      <img src={HeroImage} alt="hero image" style={{width: '300px', height: '300px'}}/>
+                      <img src={HeroImage} alt="restaurant food" style={{width: '300px', height: '300px'}}/>
                   </div>
 
               </div>
