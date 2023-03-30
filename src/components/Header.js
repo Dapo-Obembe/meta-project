@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav";
-import logo from '../assets/img/Logo.svg';
-import '../assets/css/header.css';
+import logo from "../assets/img/Logo.svg";
+import "../assets/css/header.css";
 
 function Header() {
   return (
@@ -11,7 +11,6 @@ function Header() {
           <img src={logo} alt="header logo" />
           <Nav />
         </div>
-        
       </header>
     </>
   );

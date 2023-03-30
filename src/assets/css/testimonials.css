@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }
 
 .testimonials__container {
@@ -15,8 +16,15 @@
   align-items: center;
 }
 
+.testimonials__container h2 {
+  font-family: var(--display-title);
+  color: var(--secondary-clr-3);
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+
 .testimonials__items {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
   align-items: center;

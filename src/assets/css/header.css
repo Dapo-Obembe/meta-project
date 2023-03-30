@@ -1,40 +1,90 @@
-header{
-    min-height: 90px;
-    width: 100%;
-    background-color: var(--secondary-clr-3);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
+header {
+  min-height: 90px;
+  width: 100%;
+  background-color: var(--secondary-clr-3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.header__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    margin: 0 auto;
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
 }
 
-@media (width <= 768px){
+.header__menu--icon {
+  display: none;
+}
 
-    .header__container{
+@media (width <= 768px) {
+  .header__container {
     width: 100%;
     padding: 0 0.5rem;
+  }
+  .header__nav ul {
+    display: none;
+  }
+  .header__menu--icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .mobileNav {
+    background-color: var(--secondary-clr-3);
+    position: absolute;
+    top: 12%;
+    right: 0;
+    margin: 2px 0;
+    padding: 0 1rem;
+    min-height: 350px;
+    min-width: 250px;
+    animation: slideInRight 0.3s linear;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
     }
-    .header__nav{
-        display: none;
+    to {
+      transform: translateX(0%);
     }
+  }
+  .mobileNav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    font-family: var(--descriptive-texts);
+  }
 }
 
+.header__nav--lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
 
-.header__nav--lists{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
+.header__nav--item a {
+  color: var(--secondary-clr-4);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header__nav--item a:hover {
+  color: var(--primary-clr-yellow);
+  text-decoration: none;
+}
+
+@media (width >= 768px) {
+  .mobileNav ul {
+    display: none !important;
+  }
 }

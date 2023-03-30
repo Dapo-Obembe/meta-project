@@ -8,24 +8,28 @@
 }
 
 .about__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 2rem;
   width: 70%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
+@media (width <= 768px) {
+  .about__container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 .about__texts {
   font-family: var(--display-title);
-  flex-basis: 40%;
+  text-align: center;
 }
 
 .about__img {
   display: flex;
   flex-direction: column;
-  flex-basis: 60%;
-  background-color: red;
   justify-self: flex-end;
 }
 
