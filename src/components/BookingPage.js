@@ -4,7 +4,7 @@ import BookingForm from "./BookingForm";
 function BookingPage() {
   return (
     <>
-      <BookingForm />
+      <BookingForm className="bookingPage" />
     </>
   );
 }
