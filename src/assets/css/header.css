@@ -42,7 +42,7 @@ header {
     padding: 0 1rem;
     min-height: 350px;
     min-width: 250px;
-    animation: slideInRight 0.3s linear;
+    animation: slideInRight 0.1s linear;
   }
 
   @keyframes slideInRight {
@@ -86,5 +86,8 @@ header {
 @media (width >= 768px) {
   .mobileNav ul {
     display: none !important;
+  }
+  div.hidden {
+    display: none;
   }
 }

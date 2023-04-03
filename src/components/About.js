@@ -16,7 +16,6 @@ function About() {
           </div>
           <div className="about__img">
             <img src={AboutImage} alt="" />
-            <img src={AboutImage} alt="" />
           </div>
         </div>
       </section>

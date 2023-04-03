@@ -1,7 +1,12 @@
 import React from "react";
+import BookingForm from "./BookingForm";
 
 function BookingPage() {
-  return <div>BookingPage</div>;
+  return (
+    <>
+      <BookingForm />
+    </>
+  );
 }
 
 export default BookingPage;

@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10rem 0;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
 }
 
 .specials__container {
@@ -16,6 +17,7 @@
 .specials__title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .specials__title h2 {
@@ -31,7 +33,7 @@
   font-family: var(--descriptive-text);
   border: none;
   border-radius: 0.5rem;
-  padding: 0 1rem;
+  padding: 0.6rem 1rem;
 }
 
 .specials__title button:hover {
