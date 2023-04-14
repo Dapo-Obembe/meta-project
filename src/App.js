@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BookingPage from "./components/BookingPage";
+import BookingPage from "./pages/Booking";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/bookingpage" element={<BookingPage />} />
+          <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </Router>
       <Footer />

@@ -8,32 +8,32 @@ function Nav() {
 
   const navItems = [
     {
-      id: "1",
+      id: "0",
       name: "Home",
       url: "/",
     },
     {
-      id: "2",
+      id: "1",
       name: "About",
       url: "/about",
     },
     {
-      id: "3",
+      id: "2",
       name: "Menu",
       url: "/menu",
     },
     {
-      id: "4",
+      id: "3",
       name: "Reservation",
-      url: "/reservation",
+      url: "/bookingpage",
     },
     {
-      id: "5",
+      id: "4",
       name: "Order Online",
       url: "/order-online",
     },
     {
-      id: "6",
+      id: "5",
       name: "Login",
       url: "/login",
     },

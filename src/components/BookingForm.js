@@ -1,54 +1,135 @@
-import React, { useState } from "react";
-import "../assets/css/booking-page.css";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import useForm from "../hooks/useForm";
+import "../assets/css/booking.css";
 
-function BookingForm() {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+const BookingForm = () => {
+  const {
+    form,
+    timeSlots,
+    isFormValid,
+    changeNameHandler,
+    changeEmailHandler,
+    changeDateHandler,
+    changeTimeHandler,
+    changeGuestsHandler,
+    changeTableHandler,
+    changeOccasionHandler,
+    changeMessageHandler,
+    submitHandler,
+  } = useForm();
 
-  function pickDate(e) {
-    e.preventDefault();
-    setDate(e.target.value);
-    console.log("picked date");
+  const navigate = useNavigate();
+
+  function handleSubmit() {
+    // const response = submitHandler();
+    navigate("/confirmation");
   }
+
   return (
-    <>
-      <section className="form">
-        <div className="form__container">
-          <h1>Book a Table</h1>
-          <p>Use the form below to book a table with us.</p>
-          <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
-            <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={pickDate} />
-            <label htmlFor="res-time">Choose time</label>
-            <select
-              id="res-time "
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            >
-              <option>17:00</option>
-              <option>18:00</option>
-              <option>19:00</option>
-              <option>20:00</option>
-              <option>21:00</option>
-              <option>22:00</option>
-            </select>
-            <label htmlFor="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" />
-            <label htmlFor="occasion">Occasion</label>
-            <select id="occasion">
-              <option>Birthday</option>
-              <option>Anniversary</option>
-            </select>
-            <input
-              type="submit"
-              id="submitBtn"
-              value="Make Your reservation"
-            ></input>
-          </form>
-        </div>
-      </section>
-    </>
+    <form onSubmit={handleSubmit} className="reservation-form">
+      <div className="column">
+        <label htmlFor="name">
+          <p>Your Name</p>
+          <input
+            value={form.name}
+            onChange={changeNameHandler}
+            type="text"
+            id="name"
+            required
+          />
+        </label>
+        <label htmlFor="email">
+          <p>Your Email</p>
+          <input
+            value={form.email}
+            onChange={changeEmailHandler}
+            type="email"
+            id="email"
+            required
+          />
+        </label>
+        <label htmlFor="res-date">
+          <p>Choose date</p>
+          <input
+            value={form.date}
+            onChange={changeDateHandler}
+            type="date"
+            id="res-date"
+            placeholder="Date"
+            required
+          />
+        </label>
+        <label htmlFor="res-time">
+          <p>Choose time</p>
+          <select onChange={changeTimeHandler} value={form.time} id="res-time">
+            {timeSlots.map((slot) => (
+              <option key={slot} value={slot}>
+                {slot}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className="column">
+        <label htmlFor="guests">
+          <p>Number of guests</p>
+          <input
+            value={form.numberOfGuests}
+            onChange={changeGuestsHandler}
+            type="number"
+            placeholder="1"
+            min="1"
+            max="10"
+            id="guests"
+            required
+          />
+        </label>
+        <label htmlFor="occasion">
+          <p>Occasion</p>
+          <select
+            value={form.occasion}
+            onChange={changeOccasionHandler}
+            id="occasion"
+          >
+            <option value="">None</option>
+            <option value="birthday">Birthday</option>
+            <option value="engagement">Engagement</option>
+            <option value="anniversary">Anniversary</option>
+          </select>
+        </label>
+        <label htmlFor="table">
+          <p>Table preference</p>
+          <select
+            value={form.tablePreference}
+            onChange={changeTableHandler}
+            id="table"
+          >
+            <option value="">None</option>
+            <option value="inside">Inside</option>
+            <option value="outside">Outside</option>
+          </select>
+        </label>
+      </div>
+      <div className="column">
+        <label htmlFor="message">
+          <p>Additional requests</p>
+          <textarea
+            value={form.message}
+            onChange={changeMessageHandler}
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </label>
+      </div>
+      <div className="submit-container">
+        <button disabled={!isFormValid}>Make Reservation</button>
+      </div>
+    </form>
   );
-}
+};
 
 export default BookingForm;
